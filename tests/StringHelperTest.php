@@ -122,25 +122,25 @@ final class StringHelperTest extends TestCase
     /**
      * @dataProvider testStringProvider
      */
-    public function testStrtolower($test_string)
+    public function testToLower($test_string)
     {
-        $this->assertEquals('ščťýľárt4569', StringHelper::strtolower($test_string));
+        $this->assertEquals('ščťýľárt4569', StringHelper::toLower($test_string));
     }
 
     /**
      * @dataProvider testStringProvider
      */
-    public function testStrtoupper($test_string)
+    public function testToUpper($test_string)
     {
-        $this->assertEquals('ŠČŤÝĽÁRT4569', StringHelper::strtoupper($test_string));
+        $this->assertEquals('ŠČŤÝĽÁRT4569', StringHelper::toUpper($test_string));
     }
 
     /**
      * @dataProvider testStringProvider
      */
-    public function testUcfirst($test_string)
+    public function testFirstCharToUpper($test_string)
     {
-        $this->assertEquals('ŠčŤýĽÁrT4569', StringHelper::ucfirst($test_string));
+        $this->assertEquals('ŠčŤýĽÁrT4569', StringHelper::firstCharToUpper($test_string));
     }
 
     public function testStringProvider()

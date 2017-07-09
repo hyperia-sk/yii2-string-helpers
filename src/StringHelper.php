@@ -71,7 +71,7 @@ class StringHelper extends BaseStringHelper
      * @param string $encoding
      * @return string
      */
-    public static function strtolower($string, $encoding = 'UTF-8')
+    public static function toLower($string, $encoding = 'UTF-8')
     {
         return mb_strtolower($string, $encoding);
     }
@@ -84,7 +84,7 @@ class StringHelper extends BaseStringHelper
      * @param string $encoding
      * @return string
      */
-    public static function strtoupper($string, $encoding = 'UTF-8')
+    public static function toUpper($string, $encoding = 'UTF-8')
     {
         return mb_strtoupper($string, $encoding);
     }
@@ -97,13 +97,13 @@ class StringHelper extends BaseStringHelper
      * @param string $encoding
      * @return string
      */
-    public static function ucfirst($string, $encoding = 'UTF-8')
+    public static function firstCharToUpper($string, $encoding = 'UTF-8')
     {
         $strlen = static::length($string, $encoding);
         $firstChar = mb_substr($string, 0, 1, $encoding);
         $then = mb_substr($string, 1, $strlen - 1, $encoding);
 
-        return mb_strtoupper($firstChar, $encoding) . $then;
+        return static::toUpper($firstChar, $encoding) . $then;
     }
 
     /**
