@@ -93,21 +93,21 @@ final class StringHelperTest extends TestCase
     public function equalStringProvider()
     {
         return [
-            [$this->getTestString(), 12]
+            ['ľčŤôĽÁrT45kl', 12]
         ];
     }
 
     public function shorterStringProvider()
     {
         return [
-            [$this->getTestString(), 15]
+            ['žčŤýč.,PrTk+', 15]
         ];
     }
 
     public function longerStringProvider()
     {
         return [
-            [$this->getTestString(), 5]
+            ['ščŤýĽÁrT4569', 5]
         ];
     }
 
@@ -146,13 +146,8 @@ final class StringHelperTest extends TestCase
     public function testStringProvider()
     {
         return [
-            [$this->getTestString()]
+            ['ščŤýĽÁrT4569']
         ];
-    }
-
-    private function getTestString()
-    {
-        return 'ščŤýĽÁrT4569';
     }
 
     /**
