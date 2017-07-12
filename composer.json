@@ -3,6 +3,7 @@
   "description": "String helpers for your Yii2 app",
   "keywords": ["yii2", "helpers", "extension"],
   "type": "yii2-extension",
+  "license": "MIT",
   "support": {
     "source": "https://github.com/hyperia-sk/yii2-string-helpers/"
   },
