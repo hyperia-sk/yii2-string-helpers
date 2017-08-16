@@ -6,7 +6,9 @@ use hyperia\helpers\StringHelper;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers StringHelper
+ * Class StringHelperTest
+ *
+ * @package hyperia\helpers\tests
  */
 final class StringHelperTest extends TestCase
 {
