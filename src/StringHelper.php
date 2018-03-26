@@ -280,7 +280,7 @@ class StringHelper extends BaseStringHelper
             "Ż" => "Z",
             "З" => "Z",
             "ז" => "Z",
-            "S" => "Z",
+            "S" => "S",
             "а" => "a",
             "ă" => "a",
             "ǎ" => "a",
