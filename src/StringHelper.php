@@ -113,7 +113,7 @@ class StringHelper extends BaseStringHelper
      * @param  string $string
      * @return string
      */
-    public static function removeAccent($string)
+    public static function removeAccent($string, $exclude_chars = [])
     {
         $convert_table = [
             "ъ" => "-",
@@ -477,6 +477,12 @@ class StringHelper extends BaseStringHelper
             "Ж" => "zh",
             "ж" => "zh",
         ];
+
+        foreach ($exclude_chars as $char) {
+            if (isset($convert_table[$char])) {
+                unset($convert_table[$char]);
+            }
+        }
 
         $string = (string)$string;
 
