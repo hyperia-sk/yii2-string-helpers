@@ -62,6 +62,17 @@ class StringHelper extends BaseStringHelper
     {
         return mb_strlen($string, $encoding);
     }
+    
+    /**
+     * Nahradí medzary separátorom
+     * @param string $string    reťazec
+     * @param string $separator oddelovací znak
+     * @return string
+     */
+    public static function underscore($string, $separator = '_')
+    {
+        return preg_replace('/[\s]+/', $separator, $string);
+    }
 
     /**
      * Convert string to lowercase
@@ -77,6 +88,17 @@ class StringHelper extends BaseStringHelper
     }
 
     /**
+     * Convert string to lowercase
+     * @param        $string
+     * @param string $encoding
+     * @return string
+     */
+    public static function strtolower($string, $encoding = 'UTF-8')
+    {
+        return static::toLower($string, $encoding);
+    }
+    
+    /**
      * Convert string to uppercase
      *
      * @access public
@@ -89,6 +111,17 @@ class StringHelper extends BaseStringHelper
         return mb_strtoupper($string, $encoding);
     }
 
+    /**
+     * Convert string to uppercase
+     * @param        $string
+     * @param string $encoding
+     * @return string
+     */
+    public static function strtoupper($string, $encoding = 'UTF-8')
+    {
+        return static::toUpper($string, $encoding);
+    }
+    
     /**
      * Convert first character of string to uppercase
      *
@@ -104,6 +137,47 @@ class StringHelper extends BaseStringHelper
         $then = mb_substr($string, 1, $strlen - 1, $encoding);
 
         return static::toUpper($firstChar, $encoding) . $then;
+    }
+    
+    /**
+     * Convert first character of string to uppercase
+     * @param        $string
+     * @param string $encoding
+     * @return string
+     */
+    public static function ucfirst($string, $encoding = 'UTF-8')
+    {
+        $strlen    = self::length($string, $encoding);
+        $firstChar = mb_substr($string, 0, 1, $encoding);
+        $then      = mb_substr($string, 1, $strlen - 1, $encoding);
+        
+        return mb_strtoupper($firstChar, $encoding).$then;
+    }
+    
+    /**
+     * Metoda vytvori z retazca slug
+     * 
+     * @param string $string retazec
+     * @param string $separator separatpor
+     * @param string $allowed_chars povolene znaky
+     * @return string
+     */
+    public static function slug($string, $separator = '-', $allowed_chars = 'a-z0-9')
+    {
+        $special_characters = '/.[]{}^$()=!|<>:';
+        $length             = strlen($special_characters);
+        $allowed_chars      = str_replace('\\', '', $allowed_chars);
+
+        for($i = 0; $i < $length; $i++)
+        {
+            $allowed_chars = str_replace($special_characters[$i], '\\'.$special_characters[$i], $allowed_chars);
+        }
+
+        $string = strtolower(static::removeAccent($string));
+        $string = trim(preg_replace('/([^'.$allowed_chars.'])/i', ' ', $string));
+        $string = static::underscore($string, $separator);
+
+        return $string;
     }
 
     /**
