@@ -1,6 +1,6 @@
 # Yii2 string helpers
 
-[![Build Status](https://travis-ci.org/hyperia-sk/yii2-string-helpers.svg)](https://travis-ci.org/hyperia-sk/yii2-secure-headers) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperia-sk/yii2-string-helpers/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/hyperia-sk/yii2-string-helpers/master/LICENSE)
 
 > Extension for Yii2 string helpers
 
