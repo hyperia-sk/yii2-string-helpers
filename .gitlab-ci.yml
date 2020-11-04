@@ -1,0 +1,3 @@
+include:
+  - project: 'devops/gitlab/pipelines'
+    file: 'templates/php-package-template.yml'

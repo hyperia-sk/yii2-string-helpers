@@ -17,6 +17,12 @@
       "email": "lukas.mestan@hyperia.sk"
     }
   ],
+  "repositories": [
+      {
+          "type": "composer",
+          "url": "https://asset-packagist.org"
+      }
+  ],
   "require": {
     "yiisoft/yii2": "*"
   },

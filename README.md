@@ -44,9 +44,6 @@ echo StringHelper::contains('is', 'This is test string'); // 1
 ```
 
 ## Tests
-
-change `phpunit.xml.dist` to `phpunit.xml` and run
-
 ```
-./vendor/bin/phpunit -c phpunit.xml
+./vendor/bin/phpunit
 ```
